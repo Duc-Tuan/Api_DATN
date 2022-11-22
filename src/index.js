@@ -8,7 +8,13 @@ const products = require("./Routers/product");
 const searchProducts = require("./Routers/searchProducts");
 
 mongoose
-  .connect("mongodb://localhost:27017/demo_resfull_api")
+  .connect(
+    "mongodb+srv://admin:admin12345@cluster0.fkjkxce.mongodb.net/customerdb?retryWrites=true&w=majority",
+    {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+    }
+  )
   .then(() => console.log("connection success"))
   .catch((error) => console.error(`connection failed ${error}`));
 
@@ -19,9 +25,9 @@ app.use(bodyParesr.json());
 // Routes
 app.use("/users", users);
 app.use("/products", products);
-app.use("/search/products", searchProducts)
-app.use("/avatarUsers", express.static('src/Images/avatarUsers'));
-app.use("/imageProduct", express.static('src/Images/ImageProducts'));
+app.use("/search/products", searchProducts);
+app.use("/avatarUsers", express.static("src/Images/avatarUsers"));
+app.use("/imageProduct", express.static("src/Images/ImageProducts"));
 
 // Router
 app.get("/", (req, res, next) => {
