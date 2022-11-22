@@ -30,11 +30,11 @@ app.use("/avatarUsers", express.static("src/Images/avatarUsers"));
 app.use("/imageProduct", express.static("src/Images/ImageProducts"));
 
 // Router
-app.get("/", (req, res, next) => {
-  return res.status(200).json({
-    message: "Server is OK!",
-  });
-});
+// app.get("/", (req, res, next) => {
+//   return res.status(200).json({
+//     message: "Server is OK!",
+//   });
+// });
 
 //catch 404 error and forward to error handler
 app.use((req, res, next) => {
