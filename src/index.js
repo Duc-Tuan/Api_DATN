@@ -31,9 +31,7 @@ app.use("/imageProduct", express.static("src/Images/ImageProducts"));
 
 // Router
 app.get("/", (req, res, next) => {
-  return res.json({
-    message: "Server is OK!",
-  });
+  return res.send("SERVER ON");
 });
 
 //catch 404 error and forward to error handler
